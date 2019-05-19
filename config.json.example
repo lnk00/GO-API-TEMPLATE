@@ -1,0 +1,5 @@
+{
+	"apiName": "<YOUR-API-NAME>",
+	"apiVersion": "<YOUR-API-VERSION>"
+	"httpPort": "<YOUR-HTTP-PORT>"
+}
