@@ -1,8 +1,8 @@
-package services
+package db
 
 import (
 	"fmt"
-	"go-api-template/models"
+	"go-api-template/services/config"
 	"log"
 	"sync"
 
@@ -13,9 +13,9 @@ import (
 var pgdb *gorm.DB
 var dbOnce sync.Once
 
-func GetDB() *gorm.DB {
+func Get() *gorm.DB {
 	dbOnce.Do(func() {
-		config := GetConfig()
+		config := config.Get()
 		dbConfig := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s",
 			config.DBHost, config.DBPort, config.DBUser,
 			config.DBName, config.DBPassword)
@@ -30,9 +30,4 @@ func GetDB() *gorm.DB {
 	})
 
 	return pgdb
-}
-
-func StartDBMigration() {
-	db := GetDB()
-	db.AutoMigrate(&models.User{})
 }

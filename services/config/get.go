@@ -1,4 +1,4 @@
-package services
+package config
 
 import (
 	"encoding/json"
@@ -23,7 +23,7 @@ type ConfigProvider struct {
 var config *ConfigProvider
 var configOnce sync.Once
 
-func GetConfig() *ConfigProvider {
+func Get() *ConfigProvider {
 	configOnce.Do(func() {
 		jsonFile, err := os.Open("src/go-api-template/config.json")
 		if err != nil {

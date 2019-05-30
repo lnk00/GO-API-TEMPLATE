@@ -2,12 +2,12 @@ package main
 
 import (
 	"go-api-template/server"
-	"go-api-template/services"
+	"go-api-template/services/config"
 	"net/http"
 )
 
 func main() {
-	config := services.GetConfig()
+	config := config.Get()
 
 	httpServer := &server.HTTPServer{
 		ID: &http.Server{Addr: config.HTTPPort, Handler: nil},

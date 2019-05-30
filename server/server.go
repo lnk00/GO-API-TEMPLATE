@@ -1,7 +1,7 @@
 package server
 
 import (
-	"go-api-template/services"
+	"go-api-template/services/db"
 	"log"
 	"net/http"
 )
@@ -11,7 +11,7 @@ type HTTPServer struct {
 }
 
 func (s *HTTPServer) Start() {
-	services.StartDBMigration()
+	db.StartMigration()
 	s.initRoutes()
 
 	err := s.ID.ListenAndServe()
