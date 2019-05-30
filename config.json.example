@@ -1,5 +1,11 @@
 {
 	"apiName": "<YOUR-API-NAME>",
-	"apiVersion": "<YOUR-API-VERSION>"
-	"httpPort": "<YOUR-HTTP-PORT>"
+	"apiVersion": "<YOUR-API-VERSION>",
+	"httpPort": "<YOUR-HTTP-PORT>",
+	"dbType": "<DATABASE-TYPE[postgres - mysql]",
+	"dbHost": "<DATABASE-HOST>",
+	"dbPort": "<DATABASE-PORT>",
+	"dbName": "<DATABASE-NAME>",
+	"dbUser": "<DATABASE-USER>",
+	"dbPassword": "<DATABASE-PASSWORD>"
 }

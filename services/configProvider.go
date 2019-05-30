@@ -12,6 +12,12 @@ type ConfigProvider struct {
 	APIName    string `json:apiName`
 	APIVersion string `json:apiVersion`
 	HTTPPort   string `json:httpPort`
+	DBType     string `json:dbType`
+	DBHost     string `json:dbHost`
+	DBPort     string `json:dbPort`
+	DBName     string `json:dbName`
+	DBUser     string `json:dbUser`
+	DBPassword string `json:dbPassword`
 }
 
 var config *ConfigProvider
