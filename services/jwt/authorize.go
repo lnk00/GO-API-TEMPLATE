@@ -32,7 +32,7 @@ func Authorize(endpoint http.HandlerFunc) http.HandlerFunc {
 			}
 		} else {
 			w.WriteHeader(http.StatusUnauthorized)
-			w.Write([]byte("401 - Unauthorized"))
+			w.Write([]byte("401 Unauthorized"))
 			return
 		}
 	}
