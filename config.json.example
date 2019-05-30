@@ -7,5 +7,6 @@
 	"dbPort": "<DATABASE-PORT>",
 	"dbName": "<DATABASE-NAME>",
 	"dbUser": "<DATABASE-USER>",
-	"dbPassword": "<DATABASE-PASSWORD>"
+	"dbPassword": "<DATABASE-PASSWORD>",
+	"signingkey": "<YOUR-SIGNING-KEY>"
 }

@@ -18,6 +18,7 @@ type ConfigProvider struct {
 	DBName     string `json:dbName`
 	DBUser     string `json:dbUser`
 	DBPassword string `json:dbPassword`
+	SigningKey string `json:signingKey`
 }
 
 var config *ConfigProvider
