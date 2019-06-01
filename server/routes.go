@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func (s *HTTPServer) initRoutes() {
+func (s *HTTPServer) InitRoutes() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("src/go-api-template/static"))))
 
 	http.HandleFunc("/api/infos", controllers.HandleAPIInfos())

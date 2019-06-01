@@ -20,9 +20,9 @@ func (s *HTTPServer) Start() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	setupCloseHandler()
 	db.StartMigration()
-	s.initRoutes()
+	s.InitRoutes()
 
-	log.Printf("- Sever is running on port %s\n", config.HTTPPort)
+	log.Printf("- Server is running on port %s\n", config.HTTPPort)
 	err := s.ID.ListenAndServe()
 	if err != http.ErrServerClosed {
 		log.Fatalln(err)
