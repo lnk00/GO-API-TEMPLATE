@@ -24,7 +24,7 @@ func Authorize(endpoint http.HandlerFunc) http.HandlerFunc {
 			if err != nil {
 				log.Print("Jwt authorization error: ", err)
 				w.WriteHeader(http.StatusUnauthorized)
-				w.Write([]byte("401 - Unauthorized"))
+				w.Write([]byte("401 Unauthorized"))
 			}
 
 			if token.Valid {
