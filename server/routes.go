@@ -7,6 +7,8 @@ import (
 )
 
 func (s *HTTPServer) initRoutes() {
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("src/go-api-template/static"))))
+
 	http.HandleFunc("/api/infos", controllers.HandleAPIInfos())
 	http.HandleFunc("/api/loggedinfos", jwt.Authorize(controllers.HandleLoggedInfos()))
 	http.HandleFunc("/api/signup", controllers.HandleSignup())

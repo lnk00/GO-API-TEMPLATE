@@ -26,7 +26,7 @@ var configOnce sync.Once
 
 func Get() *ConfigProvider {
 	configOnce.Do(func() {
-		jsonFile, err := os.Open("src/go-api-template/config.json")
+		jsonFile, err := os.Open("static/config.json")
 		if err != nil {
 			log.Print("Json open error: ", err)
 		}
