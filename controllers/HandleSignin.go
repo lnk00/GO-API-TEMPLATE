@@ -37,12 +37,8 @@ func HandleSignin() http.HandlerFunc {
 			bodyResponse.Token = ""
 		} else {
 			bodyResponse.Message = "User signed in"
-			token, err := jwt.Generate()
-			if err == nil {
-				bodyResponse.Token = token
-			} else {
-				bodyResponse.Token = ""
-			}
+			token := jwt.Generate()
+			bodyResponse.Token = token
 		}
 
 		w.Header().Set("Content-Type", "application/json")

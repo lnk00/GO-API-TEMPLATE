@@ -8,7 +8,7 @@ import (
 	jwtlib "github.com/dgrijalva/jwt-go"
 )
 
-func Generate() (string, error) {
+func Generate() string {
 	config := config.Get()
 	token := jwtlib.New(jwtlib.SigningMethodHS256)
 
@@ -19,8 +19,8 @@ func Generate() (string, error) {
 	tokenString, err := token.SignedString([]byte(config.SigningKey))
 	if err != nil {
 		log.Print("Jwt token generation error: ", err)
-		return "", err
+		return ""
 	}
 
-	return tokenString, nil
+	return tokenString
 }
